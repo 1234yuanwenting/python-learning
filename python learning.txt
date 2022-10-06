@@ -1,0 +1,346 @@
+from math import*
+from random import*
+x_list=[1,2,3]
+print(x_list[1])
+#name=input("请输入您的姓名")
+#print(name)
+#m=eval(input("请输入数字1"))
+#=eval(input("请输入数字2"))
+#print(n-m)
+c=max(10,20,40)
+d=min(10,20,40)
+print(d)
+s="hello Mike"
+print(s[0])
+print(s[1])
+print(s[-1])
+print(s[-2])
+print(s[0:3])
+#m=int(input("输入一个1-12月份的整数"))
+months="JanFebMarAprMayJunJulAugSeqOctNovDec"
+#pos=(m-1)*3  #1-1=0  2*3=6
+#print(months[pos:pos+3]);#0:3  6-9
+e=len(months);
+print(e)
+s="I am a boy"
+print(s.count("am"))
+print(s.split(' '))
+li=['apple','banana','pear']
+la=['apple','banana','pear']
+print(':'.join(li))
+print('-'.join(li))
+print(s.lower())
+print(s.upper())
+print(s.title())
+#r=(input("输入圆的半径"))
+#print(r)
+a=2
+b=3
+if(a<b):
+    a,b=b,a
+    print("输入值 a={},b={}".format(a,b))
+str1="abcba"
+if(str==str1[::-1]):
+    print(str1+"ishui")
+else:
+    print(str1+"nohui")
+
+
+
+BMI=130
+if(BMI<18.5):
+    print("yes")
+elif(19.6<BMI<30):
+    print("nono")
+else:
+    print("nonono")
+
+num1=122
+
+a=str(num1)[0]
+b=str(num1)[1]
+c=str(num1)[2]
+if a>b:
+   if a>c:
+     max_num=a
+   else:
+       max_num=c
+else:
+   if b>c:
+     max_num=b
+   else:
+     max_num=c
+print(max_num)
+
+s="abcde"
+for a in s:
+    print(a,end="#")
+sum2=0
+for i in range(1,100+1):#1-100  5050
+    sum2=sum2+i
+print("sum=",sum2)
+
+j=0
+sum3=0
+
+for k in range(1,3,2):
+    sum3=sum3+k
+    j=j+1
+print("\n",j,sum3)
+
+sum4=0
+i=1
+
+while(i<=100):
+    sum4=sum4+i
+    i=i+1
+print(sum4)
+
+v=2
+print(v**3)
+
+n=20
+x1=1
+x2=1
+count=2
+print("{:>8}{:>8}".format(x1,x2),end='')
+for i in range(3,21):
+    x3=x2+x1
+    print("{:>8}".format(x3),end='')
+    count = count + 1
+    if count%4==0:
+        print()
+    x1=x2
+    x2=x3
+
+#列表
+a=["A","B","C","D"]
+b=[["A",98],["B",97]]
+a[-1]="E"
+a.append("F")
+print(len(a))
+b.insert(0,["M",99])
+del a[-1]
+b.pop(0)
+a.remove("C")
+print(b[0],b[-1])
+print(a[0],a[-1])
+print("A" in a)
+c=[1,2,3,3,3,3,0,-1,2]
+d=c.count(3)
+print(d)
+
+for i in range(7):
+    print("{:>8}".format(c[i]),end='')
+print()
+
+c.sort()
+for i in c :
+    print(i,end='')
+e="12345"
+print()
+print(e[4:1:-2])
+
+f=[100,200]
+
+g=c+f
+for i in g:
+    print("{:>8}".format(i),end='')
+
+c.extend(f)
+print()
+for i in c:
+    print("{:>8}".format(i), end='')
+h=f*3
+for i in h:
+    print("{:>8}".format(i), end='')
+print()
+print(3*3)
+
+print("a"*3)
+
+gest=f[:]
+for i in gest:
+    print("{:>8}".format(i), end='')
+print("(((((((((((((((")
+gestcopy=gest.copy()
+for i in gestcopy:
+    print("{:>8}".format(i), end='')
+
+#lumn=eval(input("请输入一个列表:\n"))
+#for i in lumn:
+   # print("{:>8}".format(i), end='')
+#print(type(lumn))
+
+#元组
+print()
+tup=(99,98,97,21,0,99)
+for i in tup:
+    print(i,end='')
+
+print(len(tup))
+print(tup.count(99))
+
+#二分查找
+ls=[1,2,3,6,8,11]
+target=99
+low=0
+high=len(ls)
+while(low<high):
+    mid=(low+high)//2
+    if(ls[mid]==target):
+        print('ok',mid)
+        break
+    elif(ls[mid]>target):
+        high=mid-1
+    else:
+        low=mid+1
+print("notfind")
+
+
+a="reeeeee"
+
+print(a[::-1])
+
+result="1,1,2,2,3,3,4,4,4"
+flag=['1','2','3','4']
+
+resultlist=result.split(',')
+ans=[0]*4
+for i in range(4):
+    ans[i]=resultlist.count(flag[i])
+    print(ans[i])
+most=max(ans)
+print(most)
+mostcom=flag[ans.index(most)]#flag[获取最大值所在的标号]
+print(mostcom)
+
+faces=[0]*13
+for i in range(100000):
+    face1=randint(1,6)
+    face2=randint(1,6)
+    faces[face1+face2]+=1
+print("###################3")
+for i in range(2,13):
+    rate=faces[i]/100000
+
+    print("点数{}共出现了{}次".format(i,faces[i]),end=",")
+    print("出现概率{:.2%}".format(rate))
+
+s1=['A','B','C','D']
+s2=[1,2,3,4]
+menus=[]
+for i in s1:
+    for j in s2:
+        menu=(j,i)
+        menus.append(menu)
+for i in menus:
+    print(i,end='')
+
+
+atters=["A","B"]
+tables=[["zhangsan",20,10],
+        ["lisi",100,20]]
+names=[names[0] for names in tables]
+#for i in names:
+print(names)
+scores=[scores[1:]for scores in tables]
+#for i in scores:
+print(scores)
+totals=[sum(item) for item in scores]
+print(totals)
+avgs=[]
+
+for j in range(2):
+    avgs.append(sum(scores[i][j]for i in range(2))/2)#各个属性总分平均
+for i in range(2):
+    print("{:<6}:{:>4}".format(names[i],totals[i]))#每个人的总分
+for i in range(2):
+    print("{:<8}:{:>4}".format(atters[i], avgs[i]))#各个属性总分平均
+print(names[totals.index(max(totals))])
+
+#字典
+dicA={'A':1000,'B':200,'c':400}
+dicA['d']=900
+dicA['d']=1000
+del dicA['d']
+no=dicA.pop('E',"nonono")
+print(dicA)
+print(no)
+print(type(dicA))
+items={'俄罗斯':'A','加拿大':'B'}
+dictB=dict(items)
+print(dictB)
+print(type(dictB))
+
+print(items.get('chin','nono'))
+
+sen="abcdeaaaaaabb"
+sen=sen.lower()
+counts={}#字典
+for c in sen:#c键值
+    if c in counts:#如果存在
+        counts[c]=counts[c]+1
+    else:
+        counts[c]=1#不存在说明第一次遇见该字符 将C:1写入字典
+print(counts)
+
+counts2={}
+for c in sen:
+    counts2[c]=counts2.get(c,0)+1
+print(counts)
+for key in items.keys():
+    print(key)
+    print(items[key])
+for key in items.keys():
+    print(key,items[key])
+
+for item in items.items():
+    print(item)
+ie={'B':99,'A':45,'C':87}
+ld=sorted(ie)
+for cou in ld:
+    print(cou,ie[cou])
+m=[(v,k) for k,v in ie.items()]
+m.sort()
+m=[(k,v)for v,k in m]
+q=dict(m)
+print(m)
+print(type(q))
+iq={'D':89,'E':22}
+#for k,v in iq.items():
+   # ie[k]=v
+ie.update(iq)
+print(ie)
+
+#集合
+set1={1,2,3,5}
+set1.update((2,3,4))
+set1.remove(1)
+print(set1)
+
+set2={9,10,11}
+set3=set1&set2
+print(set3)
+
+def max(a,b):
+    if a>=b: return a
+    else: return b
+c=max(12,45)
+print(c)
+
+def f(n):
+    if n==1 : return 1
+    else :return n*f(n-1)
+for i in range(1,9+1):
+    print(f(i),end='')
+
+def fibo(n):
+    if n==1 or n==2: return 1
+    else: return fibo(n-1)+fibo(n-2)
+for i in range(1,20+1):
+    print("{:>8}".format(fibo(i)),end=""if i%5!=0 else "\n")
+def gcd(a,b):
+    if b==0:return a
+    else: return gcd(b,a%b)
+print(gcd(12,24))
